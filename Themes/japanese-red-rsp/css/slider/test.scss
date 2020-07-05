@@ -1,0 +1,60 @@
+$blue: #3bbfce;
+$margin: 16px;
+
+.content-navigation {
+  border-color: $blue;
+  color: darken($blue, 9%);
+}
+
+.border {
+  padding: $margin / 2;
+  margin: $margin / 2;
+  border-color: $blue;
+}
+
+$colors: #f74a3a #fcbe26 #8cc687 #4da5f2 #b01395;
+$i:0;
+.menu-main ul li {
+  @each $col in red, orange, green, blue, purple {
+    $i: $i + 1;
+    &.#{$col} {
+      background: nth($colors, $i);
+    }
+  }
+}
+
+// Создаем mixin
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: 479px) { @content; }
+  }
+  @else if $media == wide-handhelds {
+    @media only screen and (min-width: 480px) and (max-width: 767px) { @content; }
+  }
+  @else if $media == tablets {
+    @media only screen and (min-width: 768px) and (max-width: 959px) { @content; }
+  }
+}
+
+.menu-main {
+  float: left;
+  width: 300px;
+
+  // Для телефонов
+  @include respond-to(handhelds) { float: none; };
+  // Для телефонов с широким экраном
+  @include respond-to(wide-handhelds) { float: none; };
+  // Для планшетов
+  @include respond-to(tablets) { width: 240px; };
+}
+
+// Instead of just `.message.info`.
+%message-info, .message.info {
+  border: 1px solid black;
+  font-size: 1.5rem;
+}
+
+.heads-up {
+  // Instead of `.message.info`.
+  @extend %message-info;
+}

@@ -1,0 +1,8 @@
+@charset "UTF-8";
+/* Здравствуйте, Ulibka крупно*/
+/*светлее*/
+div.cat_bar {
+  background: #99abbf url(../images/theme/main_block.png) no-repeat 0 -160px;
+}
+
+/*# sourceMappingURL=colors.css.map */

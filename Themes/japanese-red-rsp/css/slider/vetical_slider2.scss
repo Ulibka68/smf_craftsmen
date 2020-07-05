@@ -1,0 +1,69 @@
+$cnt_img : 5;
+$time_slide : 0.5;
+$time_view : 3;
+$time_show : $cnt_img * ($time_slide + $time_view);
+$time_show : #{$time_show}s;
+
+$height_img : calc(100vmin - 5px);
+$height_img : 400px;
+
+%box, %box::before, %box::after
+{
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.container, .slides {
+  @extend %box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slides {
+  overflow: hidden;
+  width: 75vmin;
+  height: $height_img;
+  //animation: slide 1s 1;
+
+  li {
+    width: 75vmin;
+    height: $height_img;
+    position: relative;
+    z-index: 1;
+    display: block;
+
+    animation: slide $time_show infinite;
+  }
+
+  img {
+    height: $height_img;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+$one_slot : 100 / $cnt_img;
+$one_slot_start : $one_slot * $time_slide / ( $time_slide + $time_view );
+
+@keyframes slide {
+
+  0% { top: 0px; }
+
+  @for $i from 0 to $cnt_img {
+    $j : $i * 100 / $cnt_img;
+
+    $strt : $j + $one_slot_start;
+    $end : $j + $one_slot;
+
+    $k : (-$i * $height_img);
+    #{$strt}% {top : #{$k};}
+    #{$end}% {top : #{$k};}
+  }
+
+}
+

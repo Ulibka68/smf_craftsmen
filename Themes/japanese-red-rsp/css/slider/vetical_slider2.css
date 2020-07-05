@@ -1,0 +1,68 @@
+.container, .slides, .container::before, .slides::before, .container::after, .slides::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slides {
+  overflow: hidden;
+  width: 75vmin;
+  height: 400px;
+}
+.slides li {
+  width: 75vmin;
+  height: 400px;
+  position: relative;
+  z-index: 1;
+  display: block;
+  animation: slide 17.5s infinite;
+}
+.slides img {
+  height: 400px;
+  object-fit: cover;
+  object-position: top;
+}
+
+@keyframes slide {
+  0% {
+    top: 0px;
+  }
+  2.8571428571% {
+    top: 0px;
+  }
+  20% {
+    top: 0px;
+  }
+  22.8571428571% {
+    top: -400px;
+  }
+  40% {
+    top: -400px;
+  }
+  42.8571428571% {
+    top: -800px;
+  }
+  60% {
+    top: -800px;
+  }
+  62.8571428571% {
+    top: -1200px;
+  }
+  80% {
+    top: -1200px;
+  }
+  82.8571428571% {
+    top: -1600px;
+  }
+  100% {
+    top: -1600px;
+  }
+}
+
+/*# sourceMappingURL=vetical_slider2.css.map */

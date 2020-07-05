@@ -1,0 +1,60 @@
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} ^.*(bing|mail|Pinterestbot|magpie|trendictionbot|petalbot).*$ [NC]
+RewriteRule .* - [F,L]
+
+Order allow,deny
+allow from all
+Deny from 207.46.13.170   207.46.13. 157.55.39.119 40.77.167. 66.249.70.81 66.249.64.36
+
+
+#Закрытие индексации
+SetEnvIfNoCase User-Agent "^Yahoo" search_bot
+SetEnvIfNoCase User-Agent "^Googlebot" search_bot
+SetEnvIfNoCase User-Agent "^Aport" search_bot
+SetEnvIfNoCase User-Agent "^msnbot" search_bot
+SetEnvIfNoCase User-Agent "^spider" search_bot
+SetEnvIfNoCase User-Agent "^Robot" search_bot
+SetEnvIfNoCase User-Agent "^Mail" search_bot
+SetEnvIfNoCase User-Agent "^bot" search_bot 
+SetEnvIfNoCase User-Agent "bot" search_bot
+SetEnvIfNoCase User-Agent "bing" search_bot 
+SetEnvIfNoCase User-Agent "^igdeSpyder" search_bot
+SetEnvIfNoCase User-Agent "^Snapbot" search_bot
+SetEnvIfNoCase User-Agent "^WordPress" search_bot
+SetEnvIfNoCase User-Agent "^BlogPulseLive" search_bot
+SetEnvIfNoCase User-Agent "^Parser" search_bot
+SetEnvIfNoCase User-Agent "^Googlebot-Image" search_bot
+SetEnvIfNoCase User-Agent "^StackRambler" search_bot
+SetEnvIfNoCase User-Agent "^Adsbot-Google" search_bot
+SetEnvIfNoCase User-Agent "^WebAlta" search_bot
+SetEnvIfNoCase User-Agent "^Googlebot-Mobile" search_bot
+SetEnvIfNoCase User-Agent "^YandexImages" search_bot
+
+Order Allow,Deny
+Allow from all
+Deny from env=search_bot
+
+RewriteCond %{HTTP_USER_AGENT} Exabot [OR]
+RewriteCond %{HTTP_USER_AGENT} bing [OR]
+RewriteCond %{HTTP_USER_AGENT} IDBot [OR]
+RewriteCond %{HTTP_USER_AGENT} Wotbox [OR]
+RewriteCond %{HTTP_USER_AGENT} Baiduspider [OR]
+RewriteCond %{HTTP_USER_AGENT} Baiduspider-image [OR]
+RewriteCond %{HTTP_USER_AGENT} Baiduspider-video [OR]
+RewriteCond %{HTTP_USER_AGENT} Baiduspider-news [OR]
+RewriteCond %{HTTP_USER_AGENT} Baiduspider-favo [OR]
+RewriteCond %{HTTP_USER_AGENT} Baiduspider-cpro [OR]
+RewriteCond %{HTTP_USER_AGENT} Baiduspider-ads [OR]
+RewriteCond %{HTTP_USER_AGENT} AhrefsBot [OR]
+RewriteCond %{HTTP_USER_AGENT} MJ12bot [OR]
+RewriteCond %{HTTP_USER_AGENT} Detectify [OR]
+RewriteCond %{HTTP_USER_AGENT} dotbot [OR]
+RewriteCond %{HTTP_USER_AGENT} Riddler [OR]
+RewriteCond %{HTTP_USER_AGENT} SemrushBot [OR]
+RewriteCond %{HTTP_USER_AGENT} LinkpadBot [OR]
+RewriteCond %{HTTP_USER_AGENT} BLEXBot [OR]
+RewriteCond %{HTTP_USER_AGENT} FlipboardProxy [OR]
+RewriteCond %{HTTP_USER_AGENT} aiHitBot [OR]
+RewriteCond %{HTTP_USER_AGENT} trovitBot [OR]
+RewriteCond %{HTTP_USER_AGENT} Zeus
+RewriteRule ^(.*)$ – [F,L] 

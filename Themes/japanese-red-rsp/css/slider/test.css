@@ -1,0 +1,53 @@
+.content-navigation {
+  border-color: #3bbfce;
+  color: #2ca2af;
+}
+
+.border {
+  padding: 8px;
+  margin: 8px;
+  border-color: #3bbfce;
+}
+
+.menu-main ul li.red {
+  background: #f74a3a;
+}
+.menu-main ul li.orange {
+  background: #fcbe26;
+}
+.menu-main ul li.green {
+  background: #8cc687;
+}
+.menu-main ul li.blue {
+  background: #4da5f2;
+}
+.menu-main ul li.purple {
+  background: #b01395;
+}
+
+.menu-main {
+  float: left;
+  width: 300px;
+}
+@media only screen and (max-width: 479px) {
+  .menu-main {
+    float: none;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .menu-main {
+    float: none;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  .menu-main {
+    width: 240px;
+  }
+}
+
+.heads-up, .message.info {
+  border: 1px solid black;
+  font-size: 1.5rem;
+}
+
+/*# sourceMappingURL=test.css.map */

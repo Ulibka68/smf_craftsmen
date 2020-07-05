@@ -1,0 +1,213 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="ru">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--    <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>-->
+<!--</head>-->
+<!--<body>-->
+
+<style>
+    :root {
+        --height-row : 50px;
+        --form-row-padding : 8px;
+        --mast-bgr-color : #FDE4BB;
+        --svg-size : 25px;
+    }
+
+    .b-container {
+        width: 800px;
+        height: 900px;
+        background-color: #9590e1;
+        margin: 0 auto;
+        padding: 10px;
+        font-size: 30px;
+        color: #fff;
+    }
+
+    #popup-container-background {
+        position: fixed;
+        background-color: rgba(255, 228, 196, 0.5);
+        width: 100%;
+        height: 100vh;
+        left: 0;
+        top: 0;
+
+        font-size: 1.2rem;
+        font-family: Arial;
+
+        display: none;
+
+    }
+
+    .popup-container {
+        width: 450px;
+        /*border: 2px solid black;*/
+        margin: 0 auto;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        padding: 8px;
+        box-shadow: 10px 10px 7px  rgba(192,143,143,0.75) inset,
+        -10px -10px 7px  rgba(192,143,143,0.75) inset;
+        background-color: var(--mast-bgr-color);
+
+        font:inherit;
+    }
+
+    .form-row-field {
+        margin: 3px;
+        padding: var(--form-row-padding);
+        /*border: 1px solid red;*/
+        /*height: 100px;*/
+        display: block;
+        position: relative;
+    }
+    .form-label {
+        display: block;
+        position: relative;
+    }
+
+    .file-dialog-name {
+        height: var( --height-row);
+        display: inline-block;
+        width: 100%;
+        padding-left: 5px;
+        font-size: 1.2rem;
+        box-sizing: border-box;
+    }
+
+    .field-picture {
+        width: var(--svg-size);
+        height: var(--svg-size);
+        position: absolute;
+        top: var(--form-row-padding);
+        left:var(--form-row-padding);
+    }
+
+    .feedback-input {
+        height: 90px;
+        overflow: auto;
+        width: calc( 100% - var(--svg-size) - 8px);
+        margin-left: calc(var(--svg-size) + 8px);
+        display: block;
+        position: relative;
+        box-sizing: border-box;
+        resize: vertical;
+    }
+
+    .span-btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .button-expand {
+        display: inline-block;
+
+        background-color: #FDE4BB;
+        height: calc( var(--height-row));
+        padding: 0 2rem;
+        font:inherit;
+        text-align: center;
+        border-radius: 5px;
+
+        box-shadow: 12px 12px 16px 0 rgba(255, 255, 255, 0.3) inset,
+        -8px -8px 12px 0 rgba(0, 0, 0, .25) inset;
+
+    .   --color: #ef6eae;
+        --hover: #ef8f6e;
+    }
+
+    .button-span-pos{
+        line-height: var(--height-row);
+    }
+
+    /*Animate the size, outside*/
+    .button-expand:hover,
+    .button-expand:focus {
+        animation: pulse 1s;
+        box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+    }
+
+    .btn-submit {
+        margin: 0 1rem;
+    }
+
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 var(--hover);
+        }
+    }
+
+
+    #file-dialog {
+        display: block;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
+
+    .mobile #popup-container-background {
+        font-size: 2rem;
+    }
+    .mobile .popup-container {
+        width : 90%;
+        --height-row : 100px;
+    }
+
+    .mobile .file-dialog-name {
+        font-size: 1.9rem;
+    }
+
+    .mobile .feedback-input {
+        font-size: 1.9rem;
+        height: 250px;
+    }
+
+</style>
+
+
+<!--<div class="b-container">-->
+<!--    Sample Text-->
+<!--    <a href="javascript:PopUpShow()">Show popup</a>-->
+<!--</div>-->
+
+
+
+<div id="popup-container-background">
+    <div class="popup-container">
+        <form class="popup-form" id="send_to_google" name="send_to_google" enctype="multipart/form-data">
+            <div class="form-row-field">
+                <label for="file-dialog" class="form-label">
+                    <input type="text" class="file-dialog-name" id="file-dialog-name-id" name="file-dialog-name-id" placeholder="no file selected" readonly>
+                    <input type="file" id="file-dialog" name="file" accept=".jpg, .jpeg, .png"
+                           onChange="document.getElementById('file-dialog-name-id').value = this.value.slice(12);">
+                    <div class="button-expand span-btn">
+                        <span class="button-span-pos">Фото</span>
+                    </div>
+                </label>
+            </div>
+
+            <div class="form-row-field">
+                <textarea class="feedback-input" id="comment" name="comments" placeholder="Comment"></textarea>
+                <img id ='5598de70-9f5a-11ea-bb37-0242ac130002' src="img/comment.svg" class="field-picture" alt="">
+            </div>
+
+            <div class="form-row-field">
+                <input class="button-expand btn-submit" type="button" id="btnFrmGcs5" value="Вставить фото"/>
+                <input class="button-expand btn-submit" type="button" id="btnFrmGcs5_cancel" value="Отмена"/>
+            </div>
+
+        </form>
+    </div>
+
+
+</div>
+
+
+<!--</body>-->
+<!--</html>-->

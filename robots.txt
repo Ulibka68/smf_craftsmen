@@ -1,0 +1,73 @@
+Host: woodcraftsman.ru
+Sitemap: https://woodcraftsman.ru/sitemap.xml
+
+User-agent: Googlebot
+Allow: /*sitemap
+Allow: /Themes/*.css
+Allow: /Themes/*.js
+Allow: /Themes/*png
+Allow: /Themes/*gif
+Disallow: /attachments/
+Disallow: /avatars/
+Disallow: /Packages/
+Disallow: /Smileys/
+Disallow: /Sources/
+Disallow: /Themes/
+Disallow: /Games/
+Disallow: /*.msg
+Disallow: /*.new
+Disallow: /*sort
+Disallow: /*topicseen
+Disallow: /*wap
+Disallow: /*imode
+Disallow: /*action
+Disallow: /*prev_next
+Disallow: /*all
+Disallow: /*PHPSESSID
+Disallow: /*go.php
+
+User-agent: Yandex
+Allow: /*sitemap
+Disallow: /attachments/
+Disallow: /avatars/
+Disallow: /Packages/
+Disallow: /Smileys/
+Disallow: /Sources/
+Disallow: /Themes/
+Disallow: /Games/
+Disallow: /cache/
+Disallow: /UploadedAvatars/
+Disallow: /ad_images/
+Disallow: /*.msg
+Disallow: /*.new
+Disallow: /*sort
+Disallow: /*topicseen
+Disallow: /*wap
+Disallow: /*imode
+Disallow: /*action
+Disallow: /*prev_next
+Disallow: /*all
+Disallow: /*PHPSESSID
+Disallow: /*go.php
+
+User-agent: Mediapartners-Google
+Disallow:
+
+User-Agent: YandexDirect
+Disallow:
+
+User-agent: Slurp
+Disallow: /
+Crawl-delay: 100
+
+User-agent: bingbot/2.0
+Crawl-delay: 120
+Disallow: /*?*
+
+User-agent: bingbot
+Disallow: /
+Crawl-delay: 120
+
+User-agent: *
+Disallow: /*?*
+Crawl-delay: 120

@@ -1,0 +1,74 @@
+//@import "lesshat";
+
+$slide-count: 3;
+$duration: 20s;
+$display-time: 3s;
+$width: 640px;
+$height: 480px;
+
+div.slides-frame {
+  border: 3px solid #AAA;
+  width: $width;
+  height: $height;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+div.slides {
+  -webkit-animation: slideUp $duration alternate infinite;
+  -moz-animation: slideUp $duration alternate infinite;
+  -o-animation: slideUp $duration alternate infinite;
+  animation: slideUp $duration alternate infinite;
+  position: relative;
+}
+
+div.slide {
+  width: $width;
+  height: $height;
+  font-size: 0;
+
+  &-1 {
+    background: url('http://media.2oceansvibe.com/wp-content/uploads/2013/02/Game-of-Thrones-game-of-thrones-17629189-1280-720-640x480.jpeg');
+  }
+
+  &-2 {
+    background: url('https://2.bp.blogspot.com/-O-JHDNhGhdw/TuvxZOCXg6I/AAAAAAAAAZA/Fwt1UNBObC0/s640/Daenerys-Targaryen-game-of-thrones-17834607-1024-768.jpg')
+  }
+
+  &-3 {
+    background: url('http://s5.best-desktop-wallpaper.net/images/640/32/ff9f3c2885bd9677bbdedcc13c7b7fe3.jpg');
+  }
+
+  &-4 {
+    background: url('https://1.bp.blogspot.com/-Szz11Bv9Bo4/TyFDOvwNGOI/AAAAAAAAAgk/VyH-YHODe4U/s640/gameofthrones.jpg');
+  }
+}
+
+
+@keyframes slideUp {
+  0% {
+    bottom: 0;
+  }
+  20% {
+    bottom: 0;
+  }
+  27% {
+    bottom: 480px;
+  }
+  47% {
+    bottom: 480px;
+  }
+  54% {
+    bottom: 960px;
+  }
+  74% {
+    bottom: 960px;
+  }
+  80% {
+    bottom: 1440px;
+  }
+  100% {
+    bottom: 1440px;
+  }
+}
